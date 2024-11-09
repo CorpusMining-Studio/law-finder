@@ -11,7 +11,7 @@ import (
 var laws embed.FS
 
 const (
-	port = "8080"
+	port = "8001"
 )
 
 func StartServer() {
