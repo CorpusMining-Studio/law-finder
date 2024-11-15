@@ -27,6 +27,12 @@ func normalizeArticle(input string) (int, error) {
 	input = strings.ReplaceAll(input, "條", "")
 	input = strings.ReplaceAll(input, " ", "")
 
+	// Remove numbers after dash
+	dashIndex := strings.Index(input, "-")
+	if dashIndex != -1 {
+		input = input[:dashIndex]
+	}
+
 	// Try to parse the input directly as an integer
 	if num, err := strconv.Atoi(input); err == nil {
 		return num, nil
